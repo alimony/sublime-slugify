@@ -54,4 +54,9 @@ if __name__ == '__main__':
             slug_string = 'abc-aao'
             self.assertEqual(slug_string, slugify(test_string))
 
+        def test_some_punctuation(self):
+            test_string = ' a!b"c#d$e&f&g\'h'
+            slug_string = 'a-b-c-d-e-f-g-h'
+            self.assertEqual(slug_string, slugify(test_string))
+
     unittest.main(argv=['TestSlugify'])
