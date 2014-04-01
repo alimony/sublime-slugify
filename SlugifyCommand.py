@@ -6,10 +6,16 @@ Parts of these commands are borrowed from the sublime-slug package:
 https://github.com/madeingnecca/sublime-slug
 '''
 
+from __future__ import unicode_literals
+
 import sublime
 import sublime_plugin
-from .slugify import slugify
-
+try:
+    # This import method works in Sublime Text 2.
+    import slugify
+except ImportError:
+    # While this works in Sublime Text 3.
+    from .slugify import slugify
 
 class SlugifyCommand(sublime_plugin.TextCommand):
     separator = '-'

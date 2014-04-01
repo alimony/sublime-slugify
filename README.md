@@ -1,6 +1,6 @@
 # Slugify
 
-Sublime Text 3 package that adds a command for converting the selected text to a slug.
+Sublime Text 2 & 3 package that adds a command for converting the selected text to a slug.
 
 Installation
 ------------

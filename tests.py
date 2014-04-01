@@ -3,6 +3,8 @@
 
 '''Run some basic tests on various pieces of text.'''
 
+from __future__ import unicode_literals
+
 if __name__ == '__main__':
     import unittest
     from slugify import slugify

@@ -4,6 +4,8 @@
 The slugify() function lives in a separate file so it can be tested by tests.py
 '''
 
+from __future__ import unicode_literals
+
 import re
 from unicodedata import normalize
 
