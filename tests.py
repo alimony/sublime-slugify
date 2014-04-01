@@ -7,7 +7,7 @@ if __name__ == '__main__':
     import unittest
     from slugify import slugify
 
-    class TestCharValue(unittest.TestCase):
+    class TestSlugify(unittest.TestCase):
 
         def test_empty_string(self):
             test_string = ''
@@ -54,4 +54,4 @@ if __name__ == '__main__':
             slug_string = 'abc-aao'
             self.assertEqual(slug_string, slugify(test_string))
 
-    unittest.main(argv=['TestCharValue'])
+    unittest.main(argv=['TestSlugify'])
