@@ -17,13 +17,14 @@ except ImportError:
     # While this works in Sublime Text 3.
     from .slugify import slugify
 
+
 class SlugifyCommand(sublime_plugin.TextCommand):
     separator = '-'
 
     def run(self, edit):
         def done(value):
             self.separator = value
-            self.view.run_command('slug_replace', {'separator': self.separator})
+            self.view.run_command('slugify_replace', {'separator': self.separator})
 
         window = self.view.window()
         window.show_input_panel('Separator', self.separator, done, None, None)
