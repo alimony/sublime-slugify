@@ -12,7 +12,7 @@ import sublime
 import sublime_plugin
 try:
     # This import method works in Sublime Text 2.
-    import slugify
+    from slugify import slugify
 except ImportError:
     # While this works in Sublime Text 3.
     from .slugify import slugify
