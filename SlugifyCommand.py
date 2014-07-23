@@ -10,6 +10,13 @@ from __future__ import unicode_literals
 
 import sublime
 import sublime_plugin
+
+# For this plugin to work on Windows, we need to include the path of the Sublime
+# Text application itself to the import search path.
+import os
+import sys
+sys.path.append(os.path.dirname(sys.executable))
+
 try:
     # This import method works in Sublime Text 2.
     from slugify import slugify
