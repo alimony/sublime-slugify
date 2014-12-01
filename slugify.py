@@ -9,7 +9,7 @@ from __future__ import unicode_literals
 import re
 from unicodedata import normalize
 
-_punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
+_punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.;]+')
 
 
 def slugify(s, separator='-'):
