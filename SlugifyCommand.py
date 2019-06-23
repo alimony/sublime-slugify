@@ -26,24 +26,15 @@ except ImportError:
 
 
 class SlugifyCommand(sublime_plugin.TextCommand):
-    separator = '-'
 
     def run(self, edit):
-        def done(value):
-            self.separator = value
-            self.view.run_command('slugify_replace', {'separator': self.separator})
-
-        window = self.view.window()
-        window.show_input_panel('Separator', self.separator, done, None, None)
-
-
-class SlugifyReplaceCommand(sublime_plugin.TextCommand):
-
-    def run(self, edit, separator):
         regions = self.view.sel()
 
         # Only run if there is a selection.
         if len(regions) > 1 or not regions[0].empty():
+
+            separator = sublime.load_settings('Slugify.sublime-settings').get('slugify_separator', '-')
+
             for region in regions:
                 text = self.view.substr(region)
                 self.view.replace(edit, region, slugify(text, separator))
